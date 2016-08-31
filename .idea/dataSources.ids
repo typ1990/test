@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - @localhost" uuid="7ef26257-efed-42c8-ac3f-4a94f5ab4ce6">
+    <database-info product="MySQL" version="5.7.13-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="seckill"/>
+    <table name="seckill" schema="" catalog="seckill" type="TABLE">
+      <column name="seckill_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" remarks="5ZWG5ZOB5bqT5a2YaWQ=" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="120" scale="0" nullable="false" jdbcType="12" remarks="5ZWG5ZOB5ZCN56ew"/>
+      <column name="number" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5bqT5a2Y5pWw6YeP"/>
+      <column name="start_time" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" remarks="56eS5p2A5byA5ZCv5pe26Ze0" version="true"/>
+      <column name="end_time" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn" remarks="56eS5p2A57uT5p2f5pe26Ze0"/>
+      <column name="create_time" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" remarks="5Yib5bu65pe26Ze0"/>
+      <primary-key name="PRIMARY" columns="seckill_id"/>
+      <index name="idx_create_time" unique="false" columns="create_time"/>
+      <index name="idx_end_time" unique="false" columns="end_time"/>
+      <index name="idx_start_time" unique="false" columns="start_time"/>
+    </table>
+    <table name="success_killed" schema="" catalog="seckill" type="TABLE">
+      <column name="seckill_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" remarks="56eS5p2A5ZWG5ZOBaWQ="/>
+      <column name="user_phone" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" remarks="55So5oi35omL5py65Y+3"/>
+      <column name="state" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="LTE=" remarks="54q25oCB5qCH6K+G77yaLTEg5peg5pWIIDDvvJrmiJDlip8gMe+8miDlt7Lku5jmrL4="/>
+      <column name="create_time" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" remarks="5Yib5bu65pe26Ze0" version="true"/>
+      <primary-key name="PRIMARY" columns="seckill_id,user_phone"/>
+      <index name="idx_create_time" unique="false" columns="create_time"/>
+    </table>
+  </data-source>
+</component>
