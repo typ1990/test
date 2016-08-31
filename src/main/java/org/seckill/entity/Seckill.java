@@ -14,6 +14,8 @@ public class Seckill {
 
     private Date startTime;
 
+    private  Date endTime;
+
     private Date createTime;
 
     public long getSeckillId() {
@@ -56,6 +58,14 @@ public class Seckill {
         this.createTime = createTime;
     }
 
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
+
     @Override
     public String toString() {
         return "Seckill{" +
@@ -63,6 +73,7 @@ public class Seckill {
                 ", name='" + name + '\'' +
                 ", number=" + number +
                 ", startTime=" + startTime +
+                ", endTime=" + endTime +
                 ", createTime=" + createTime +
                 '}';
     }
