@@ -14,7 +14,7 @@ CREATE  TABLE seckill(
 PRIMARY KEY (seckill_id),
 key idx_start_time(start_time),
 key idx_end_time(end_time),
-key idx_create_time(create_time),
+key idx_create_time(create_time)
 )ENGINE=InnoDB AUTO_INCREMENT=1000 DEFAULT  CHARSET=utf8 COMMENT='秒杀库存表';
 
 CREATE TABLE seckill (
