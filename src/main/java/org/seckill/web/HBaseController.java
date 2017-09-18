@@ -25,8 +25,9 @@ public class HBaseController {
     @RequestMapping(value = "/create",method = RequestMethod.POST)
     public SeckillResult<Long> createTable(@RequestParam(value = "tableName", required = true) final String tableName){
         long aa=System.currentTimeMillis();
-        loggerDis.info("进入方法");
+        loggerDis.info("进来了");
         return new SeckillResult<Long>(true,aa);
     }
+
 
 }

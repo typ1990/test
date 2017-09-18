@@ -98,6 +98,7 @@
             <AppenderRef ref="RandomAccessFile"/>
         </AsyncLogger>-->
         <logger name="distance" level="DEBUG" additivity="false">
+            <appender-ref ref="CONSOLE" />
             <appender-ref ref="ROLLINGFILE_DISTANCE"/>
         </logger>
 
