@@ -1,5 +1,7 @@
 package org.seckill.web;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.seckill.dto.Exposer;
 import org.seckill.dto.SeckillExecution;
 import org.seckill.dto.SeckillResult;
@@ -17,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
-import java.util.logging.Logger;
+
 
 /**
  * Created by lisa on 2016/8/30.
@@ -26,7 +28,7 @@ import java.util.logging.Logger;
 @RequestMapping("/seckill")//url:/模块/资源/{id}/细分
 public class SeckillController {
     private final org.slf4j.Logger logger = LoggerFactory.getLogger(this.getClass());
-
+    Logger loggerDis =  LogManager.getLogger("distance");
     @Autowired
     private SeckillService seckillService;
 
@@ -117,6 +119,14 @@ public class SeckillController {
         Date date=new Date();
         return new SeckillResult<Long>(true,date.getTime());
 
+    }
+
+    @RequestMapping(value = "/logger",method = RequestMethod.GET)
+    @ResponseBody
+    public SeckillResult<Long> log(){
+        long aa=System.currentTimeMillis();
+        loggerDis.info("我是info信息");
+        return new SeckillResult<Long>(true,aa);
     }
 
 }
