@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.seckilled</groupId>
-  <artifactId>seckilled</artifactId>
+  <artifactId>test</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>seckilled Maven Webapp</name>
@@ -98,11 +98,11 @@
       <artifactId>jackson-databind</artifactId>
       <version>2.5.4</version>
     </dependency>
-      <dependency>
+      <!--<dependency>
           <groupId>javax.servlet</groupId>
           <artifactId>javax.servlet-api</artifactId>
-          <version>3.1.0</version>
-      </dependency>
+          <version>3.0.1</version>
+      </dependency>-->
     <!--4: spring依赖-->
     <!-- 1 spring核心依赖-->
     <dependency>
@@ -173,9 +173,79 @@
           <version>3.2</version>
       </dependency>
 
+      <dependency>
+          <groupId>org.apache.hadoop</groupId>
+          <artifactId>hadoop-common</artifactId>
+          <version>2.7.3</version>
+          <exclusions>
+              <exclusion>
+                  <artifactId>servlet-api</artifactId>
+                  <groupId>javax.servlet</groupId>
+              </exclusion>
+              <exclusion>
+                  <artifactId>jasper-compiler</artifactId>
+                  <groupId>tomcat</groupId>
+              </exclusion>
+              <exclusion>
+                  <artifactId>jasper-runtime</artifactId>
+                  <groupId>tomcat</groupId>
+              </exclusion>
+              <exclusion>
+                  <artifactId>jsp-api</artifactId>
+                  <groupId>javax.servlet.jsp</groupId>
+              </exclusion>
+          </exclusions>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.hbase</groupId>
+          <artifactId>hbase-client</artifactId>
+          <version>1.2.6</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.hbase</groupId>
+          <artifactId>hbase-server</artifactId>
+          <version>1.2.6</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.hbase</groupId>
+          <artifactId>hbase-common</artifactId>
+          <version>1.2.6</version>
+      </dependency>
+      <dependency>
+          <groupId>io.netty</groupId>
+          <artifactId>netty-all</artifactId>
+          <version>4.0.26.Final</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.hbase</groupId>
+          <artifactId>hbase-protocol</artifactId>
+          <version>1.2.6</version>
+      </dependency>
+      <dependency>
+          <groupId>com.yammer.metrics</groupId>
+          <artifactId>metrics-core</artifactId>
+          <version>2.2.0</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.zookeeper</groupId>
+          <artifactId>zookeeper</artifactId>
+          <version>3.4.6</version>
+      </dependency>
+
 
   </dependencies>
   <build>
-    <finalName>seckilled</finalName>
+    <finalName>test</finalName>
+      <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <version>3.6.1</version>
+              <configuration>
+                  <source>1.8</source>
+                  <target>1.8</target>
+              </configuration>
+          </plugin>
+      </plugins>
   </build>
 </project>

@@ -57,4 +57,10 @@
         <constructor-arg index="0" value="localhost"/>
         <constructor-arg index="1" value="6379"/>
     </bean>
+
+
+    <!--Hbase数据库连接-->
+    <bean id="hBaseUtilDao" class="org.seckill.dao.hbase.HBaseUtilDao">
+    </bean>
+
 </beans>
